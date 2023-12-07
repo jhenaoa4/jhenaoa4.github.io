@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+	<title>Juliana Henao Portfolio</title>
+	
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script> -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+	<link rel="stylesheet" href="styles.css"> 
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  <!-- <link rel="stylesheet" href="static/scss/custom.css"> -->
+	<!-- <link type='text/css' href='{% static "css/header_tmpl.css" %}' rel="stylesheet"/> -->
+	<!-- <link rel="stylesheet" href="static/scss/custom.css"> -->
+	<!-- <link href="static/scss/carousel.css" rel="stylesheet"> -->
+	<!-- <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/carousel/"> -->
+</head>
+<body>
+  
+	<nav class="navbar navbar-dark bg-primary px-5 py-2 fixed-top sticky-top m-0" id="navbar-scroll">
+    <nav class="navbar navbar-expand-lg navbar-primary py-0 m-0">
+        <a class="navbar-brand" href="index.html">
+          <img src='static/images/sparkle.png' alt="Bootstrap" width="39" height="40">
+          finally</a>
+          <p class="font-weight-light">by Juliana Henao</p>
+          <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button> -->
+          <!-- <div class="collapse navbar-collapse offset justify-content-center" id="navbarSupportedContent"> -->
+        <div class="navbar-expand justify-content-center" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Portfolio<span class="sr-only"></span> </a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact<span class="sr-only"></span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+</nav>
+<div data-bs-spy="scroll" data-bs-target="#navbar-scroll" data-bs-smooth-scroll="true" tabindex="0">
+<div class="row justify-content-center text-center bg-light p-5 min-vh-100 align-items-center m-0">
+  <div class="container">
+  <h1 class="text-dark">Get your life together (finally) with this tool!</h1>
+  <p class="text-dark">This will help you creating a budget. Spend money according to your salary.</p>
+  <div class="container py-1">
+    <div class="row">
+        <div class="col-lg-7 mx-auto">
+            <div class="card rounded-0 border-0 shadow">
+                <div class="card-body p-5">
+                  <h3>Let's get started</h3>
+                  <form class="form-inline">
+                    <div class="form-group mb-2">
+                      <label for="staticEmail2" class="sr-only"></label>
+                      <input type="text" readonly class="form-control-plaintext" id="staticEmail2">
+                    </div>
+                    <div class="form-group mx-sm-3 mb-2">
+                      <label for="inputPassword2" class="sr-only">How much is your income?</label>
+                      <input type="password" class="form-control" name="income" id="income" placeholder="in the time gap you will check this">
+                    </div>
+                  <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col"> </th>
+                                    <th scope="col">First</th>
+                                    <th scope="col">Last</th>
+                                    <th scope="col">Handle</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Add rows button-->
+                    <a class="btn btn-light rounded-0 btn-block" id="insertRow" href="#">Add new row</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+$(function () {
+
+    // Start counting from the third row
+    var counter = 3;
+
+    $("#insertRow").on("click", function (event) {
+        event.preventDefault();
+
+        var newRow = $("<tr>");
+        var cols = '';
+
+        // Table columns
+        cols += '<th scrope="row">' + counter + '</th>';
+        cols += '<td><input class="form-control rounded-0" type="text" name="firstname" placeholder="First name"></td>';
+        cols += '<td><input class="form-control rounded-0" type="text" name="lastname" placeholder="Last name"></td>';
+        cols += '<td><input class="form-control rounded-0" type="text" name="handle" placeholder="Handle"></td>';
+        cols += '<td><button class="btn btn-danger rounded-0" id ="deleteRow"><i class="fa fa-trash"></i></button</td>';
+
+        // Insert the columns inside a row
+        newRow.append(cols);
+
+        // Insert the row inside a table
+        $("table").append(newRow);
+
+        // Increase counter after each row insertion
+        counter++;
+    });
+
+    // Remove row when delete btn is clicked
+    $("table").on("click", "#deleteRow", function (event) {
+        $(this).closest("tr").remove();
+        counter -= 1
+    });
+});
+</script>
+  </div>
+</div>
+
+
+<div class="row justify-content-center text-center bg-light min-vh-100 p-5 align-items-center m-0">
+  <div class="container" id="contact">
+      <h1 class="text-primary">Let's talk</h1>
+      <p class="text-dark font-weight-bold fw-bold">Reach me by:</p>
+        <i class="fas fa-phone mt-4 fa-2x"></i>
+        <p><img class="m-2t" src='static/images/sparkle.png' alt="Bootstrap" width="35" height="22">+ 57 300 3012153<img class="m-2" src='static/images/sparkle.png' alt="Bootstrap" width="35" height="22"></p>
+        <i class="fas fa-envelope mt-4 fa-2x"></i>
+        <p><img class="m-2" src='static/images/sparkle.png' alt="Bootstrap" width="35" height="22">jhenaoa15@outlook.com<img class="m-2" src='static/images/sparkle.png' alt="Bootstrap" width="35" height="22"></p>
+        <i class="fas fa-map-marker-alt fa-2x"></i>
+        <p><img class="m-2" src='static/images/sparkle.png' alt="Bootstrap" width="35" height="22">Medell&iacute;n, Colombia<img class="m-2" src='static/images/sparkle.png' alt="Bootstrap" width="35" height="22"></p>
+    <p><img src='static/images/sparkle.png' alt="Bootstrap" width="35" height="22"><a href="https://www.linkedin.com/in/jhenaoa15/" class="text-reset">Linkedin<i class="fab fa-linkedin"></i>
+      </a><img class="m-2" src='static/images/sparkle.png' alt="Bootstrap" width="35" height="22"></p>
+  </li>
+</ul>
+  </div>
+</div>
+</div>
+
+		<footer class="text-center text-light text-lg-start bg-dark my-2">
+			© 2023 Copyright: Juliana Henao All rights reserved | This page was made by Juliana Henao in HTML, CSS and Git.
+		</footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
